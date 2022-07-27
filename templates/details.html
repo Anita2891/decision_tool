@@ -1,0 +1,111 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>SUSINCHAIN Tool</title>
+    <script data-n-head="ssr" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" defer
+        crossorigin=""></script>
+    <script data-n-head="ssr"
+        src="https://cdnjs.cloudflare.com/ajax/libs/corejs-typeahead/1.2.1/typeahead.bundle.min.js" defer
+        crossorigin=""></script>
+    <script data-n-head="ssr" src="https://cdnjs.cloudflare.com/ajax/libs/lightslider/1.1.6/js/lightslider.min.js"
+        skip="false" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    </style>
+    {% raw %}
+    <link href="{{ url_for('static', filename='dss.css') }}" rel="stylesheet">
+    {% endraw %}
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.bundle.min.js'></script>
+    <script type='text/javascript' src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.5/jspdf.min.js"></script>
+    <style>
+        * {
+            font-family: sans-serif;
+        }
+
+        body {
+            padding: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: right;
+        }
+
+        table tr {
+            border-bottom: 1px solid
+        }
+
+        table th,
+        table td {
+            padding: 10px 20px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <div>
+        <!---->
+        <header id="ab-header" class="ab_header mobile greyDesktopTablet" data-v-03d6b3dc>
+            <div class="navbar">
+                <div class="left-container"><a href="https://www.ambitionbox.com" class="logo"><img <img
+                            src="https://www.dil-ev.de/fileadmin/templates/web2015/img/DIL_logo_green_meta.png"
+                            alt="DIL" height="32" width="40" style="filter:unset;">&nbsp;
+                        <img src="https://susinchain.eu/wp-content/uploads/2019/06/logo_susinchain_primary.png"
+                            alt="SUSINCHAIN" height="32" width="60" style="filter:unset;">
+                        <p class="text" style="color:#040a1e;">
+                            SUSINCHAIN Decision Tool
+                        </p>
+                    </a>
+                    <div class="nav-list-left">
+                        <div class="list-item"><a href="" title="About Susinchain LCA and cost tool"
+                                class="router-link-active">Home</a></div>
+                        <div class="list-item"><a href="" title="SUSINCHAIN Tool">Tool</a></div>
+                        <div class="list-item"><a href="" title="Feedback">Feedback</a>
+                        </div>
+                        {% raw %}
+                        <div class="list-item"><a href="{{ url_for('index') }}" title="Decision tool">Decision tool</a>
+                        </div>
+                        {% endraw %}
+                        <div class="list-item"><a href="" title="Screenshot">Screenshot</a></div>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+    <h1>Scenarios Details</h1>
+    {{ my_table }}
+    <br>
+    <span>Scaling 1:-small(25 000-75 000 tons); 2-medium(75 000-125 000 tons), 3-large(125 000-175 000 tons), 4-very large (175 000-250 000 tons)</span> </pr>
+    {% raw %}
+    <img src="{{ url_for('static', filename='plot.svg') }}" width="700">
+    {% endraw %}
+
+    <footer id="ab-footer" style="margin-bottom:;" data-v-03d6b3dc data-v-03d6b3dc>
+        <div class="container">
+            <div class="contentCtaWrapper">
+                <div class="info left-col logoContentWrapper">
+                    <div class="logo-wrap"><img width="27.2" height="31"
+                            src="https://susinchain.eu/wp-content/uploads/2019/06/eu_flag-07.png" alt="AmbitionBox"
+                            class="logo-img"> <span class="logo-text">SUSINCHAIN Decision
+                            Tool</span></div>
+                    <p class="title semibold">
+                        This study has received funding from the European Union’s Horizon 2020 research and
+                        innovation programme under grant agreement no 861976 project
+                        SUSINCHAIN.
+                    </p>
+                </div>
+            </div>
+            <!---->
+            <div class="copyright-container container">
+                <p class="footerBottomText body-large">
+                    All rights reserved © 2022 DIL.
+                </p>
+            </div>
+    </footer>
+</body>
+
+</html>
