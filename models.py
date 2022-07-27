@@ -39,17 +39,14 @@ class Model:
         df.loc[:,:] = scaled_values
         utils= util.Util()
         styler = dataFrame.style.applymap(utils.colorNegativeRed)
-
         # Template handling
         env = jinja2.Environment(loader=jinja2.FileSystemLoader(searchpath='templates'))
         template = env.get_template('details.html')
         html = template.render(my_table=styler.render())
-
         # Plot
         ax = df.plot.bar()
         fig = ax.get_figure()
         fig.savefig('static/plot.svg')
-
         # Write the HTML file
         with open('templates/report.html', 'w') as f:
             f.write(html)

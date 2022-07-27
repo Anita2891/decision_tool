@@ -1,7 +1,10 @@
 from flask import Flask, render_template, request
+from flask import Flask, redirect, url_for, render_template, request, flash
 import models
 import json
 import multi_objective as moo
+import sys
+sys.setdefaultencoding('utf-8')
 
 app = Flask(__name__,template_folder='templates')
 
